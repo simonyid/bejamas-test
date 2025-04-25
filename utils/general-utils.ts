@@ -5,6 +5,7 @@ class GeneralUtils {
         this.page = page;
     }
 
+    // Helper method for getting all the links from a webpage. It will give back the resultset in an array
     async getAllLinksFromThePage(url: string) {        
         await this.page.goto(url);
         // Get all href attributes from anchor tags
@@ -14,6 +15,7 @@ class GeneralUtils {
         return links;
     }
 
+    // Helper method for checking a link's availability. It needs the link's parent page url to be able to test the relative links too
     async testLink(link: string, parentUrl: string): Promise<number>{                        
         // The different non-http(s) protocols will be skipped
         const protocolsToSkip = [
@@ -56,6 +58,7 @@ class GeneralUtils {
         
     }
 
+    // Helper function
     async testLinksAvailabilityOnUrl(url: string){        
         const links = await this.getAllLinksFromThePage(url);
         // Check the links status
