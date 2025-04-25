@@ -16,7 +16,8 @@ cd bejamas-test
 npm install  
   
 **### 3. ⚙️ Environment Configuration**  
-To configure environment variables (Home URL, test e-mail address etc), create a .env file in the root of the project  
+To configure environment variables (Home URL, test e-mail address etc), create a .env file in the root of the project 
+Create a resources directory on root 
   
 **Example .env file:**  
 TEST_EMAIL_VALID=test@example-valid.com  
