@@ -21,6 +21,8 @@ To configure environment variables (Home URL, test e-mail address etc), create a
 **Example .env file:**  
 TEST_EMAIL_VALID=test@example-valid.com  
 TEST_EMAIL_INVALID=invalid-email  
+USER_EMAIL=registered.user@email.com  
+USER_PASSWORD=registerd.user.password  
 HOME_URL=https://www.mywebsite.com/  
 SITEMAP_URL=https://www.mywebsite.com/sitemap.xml  
   
