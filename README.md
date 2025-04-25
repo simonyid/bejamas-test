@@ -19,7 +19,7 @@ npm install
 To configure environment variables (Home URL, test e-mail address etc), create a .env file in the root of the project  
   
 **Example .env file:**  
-TEST_EMAIL_VALID=test@example.com  
+TEST_EMAIL_VALID=test@example-valid.com  
 TEST_EMAIL_INVALID=invalid-email  
 HOME_URL=https://www.mywebsite.com/  
 SITEMAP_URL=https://www.mywebsite.com/sitemap.xml  
