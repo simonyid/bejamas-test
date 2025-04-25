@@ -3,10 +3,13 @@ import { parseStringPromise } from 'xml2js';
 
 const sitemapUrl = process.env.SITEMAP_URL!;
 
+// Testing the sitemap links agains availability and noindex robots tags
+
 test.describe('Sitemap tests', () => {
   
   test('Sitemap and Crawlability Verification', async ({ request, page }) => {
-    test.setTimeout(180_000);
+    // I set up a bigger timeout here due to the large amount of sitemap links - not a good practice, but otherwise we cannot check all the links
+    test.setTimeout(3600_000);
     // Verify if sitemap.xml exists
     const sitemapResponse = await request.get(sitemapUrl);
     expect(sitemapResponse.ok()).toBeTruthy();
@@ -45,8 +48,8 @@ test.describe('Sitemap tests', () => {
           // We can fail the test here if noindex is not intended:
           // expect(robotsMeta).not.toContain('noindex');
         }
-      } catch (error) {
-        console.warn(`⚠️  ${url} there is no robots meta on the page`);
+      } catch ( error ) {
+        // if there is no robots meta, that means that there is neither noindex. Nothing to do with the link.
       }
   
       // Check if page is crawlable (not disallowed via robots meta or header)

@@ -1,14 +1,12 @@
 import { Page, Locator } from '@playwright/test';
-import GeneralUtils from '../utils/general-utils';
 
-
+// Home page
 class HomePage {
   readonly newsletterForm: Locator;
   readonly newsletterEmailInput: Locator;
   readonly newsletterSubmitButton: Locator;
   readonly feedbackMessage: Locator;
   readonly invalidEmailNotification: Locator;
-
 
   readonly pageUrl = process.env.HOME_URL!;
 
@@ -25,8 +23,12 @@ class HomePage {
     await this.page.goto(this.pageUrl);
   }
 
+  async login() {
+    await this.page.goto(this.pageUrl);
+
+  }
+
   async submitNewsletter(email: string) {
-    const gu = new GeneralUtils(this.page);
     await this.page.evaluate(() => {
       window.scrollTo(0, document.body.scrollHeight);
     });

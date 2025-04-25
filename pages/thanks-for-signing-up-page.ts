@@ -1,5 +1,7 @@
 import { Page, Locator } from '@playwright/test';
 
+//Thanks for signing up Page
+
 class ThanksForSigningUpPage {    
     readonly title: Locator;    
     

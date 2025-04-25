@@ -3,6 +3,8 @@ import { test, expect } from '../base/pomFixture';
 const validEmail = process.env.TEST_EMAIL_VALID!;
 const invalidEmail = process.env.TEST_EMAIL_INVALID!;
 
+// Testing the e-mail subsciption form on the Home Page
+
 test.describe('Lead Capture Form', () => {
 
   test.beforeEach(async ({ homePage }) => {
